@@ -1,0 +1,22 @@
+
+# Ignore build directory
+build/
+# Dependency directories
+node_modules/
+
+# Optional: Uncomment the line below if you're using npm
+# npm-debug.log
+
+# Optional: Uncomment the line below if you have a yarn.lock file
+# yarn.lock
+
+# Output of 'npm pack'
+*.tgz
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# User-specific files
+npm-debug.log
+yarn-error.log

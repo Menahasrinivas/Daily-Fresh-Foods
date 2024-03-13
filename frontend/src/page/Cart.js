@@ -26,7 +26,7 @@ const Cart = () => {
 
       if(user.email){
           
-          const stripePromise = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
+          const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
           const res = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/create-checkout-session`,{
             method : "POST",
             headers  : {
@@ -40,7 +40,8 @@ const Cart = () => {
           console.log(data)
 
           toast("Redirect to payment Gateway...!")
-          stripePromise.redirectToCheckout({sessionId : data}) 
+          stripe.redirectToCheckout({sessionId : data})
+          //stripe.redirectToCheckout({sessionId : data}) 
       }
       else{
         toast("You have not Login!")

@@ -124,18 +124,18 @@ app.post("/create-checkout-session",async(req,res)=>{
           mode : "payment",
           payment_method_types : ['card'],
           billing_address_collection : "auto",
-          shipping_options : [{shipping_rate : "shr_1OtF8gSJZwwFDAzInjTm1APv"}],
+          shipping_options : [{shipping_rate : "shr_1OtpjxLsuOmdYR9MNgAzvNgP"}],
 
           line_items : req.body.map((item)=>{
             return{
               price_data : {
-                currency : "inr",
+                currency : "USD",
                 product_data : {
                   name : item.name,
                   // images : [item.image]
                 },
                 unit_amount : item.price * 100,
-                address:stripeCustomer
+              
               },
               adjustable_quantity : {
                 enabled : true,
@@ -152,7 +152,7 @@ app.post("/create-checkout-session",async(req,res)=>{
 
       
       const session = await stripe.checkout.sessions.create(params)
-      // console.log(session)
+       console.log(session.id)
       res.status(200).json(session.id)
      }
      catch (err){

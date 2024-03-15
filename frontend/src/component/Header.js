@@ -40,9 +40,7 @@ const Header = () => {
             <Link to={"about"}>About</Link>
             <Link to={"contact"}>Contact</Link>
           </nav>
-          <Link to={"newproduct"} className="text-lg text-slate-600">
-            New product
-          </Link>
+          
 
           <div className="text-2xl text-slate-600 relative">
             <Link to={"cart"}>
@@ -69,8 +67,12 @@ const Header = () => {
                     
                   >
                     Newproduct 
+                    
                   </Link>
+                  
                 )}
+
+               
 
                 {userData.image ? (
                   <p
@@ -105,6 +107,7 @@ const Header = () => {
                   </Link>
                 </nav>
               </div>
+              
             )}
           </div>
         </div>
